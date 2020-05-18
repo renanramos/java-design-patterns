@@ -1,5 +1,7 @@
 package com.dev.renanrramos.designpattern.interpreter;
 
+import com.dev.renanrramos.designpattern.visitor.Visitor;
+
 public class Soma implements Expressao {
 
 	private Expressao direita;
@@ -16,4 +18,19 @@ public class Soma implements Expressao {
 		int valorDaDireita = direita.avalia();
 		return valorDaEquerda + valorDaDireita;
 	}
+
+	public Expressao getDireita() {
+		return direita;
+	}
+
+	public Expressao getEsquerda() {
+		return esquerda;
+	}
+
+	@Override
+	public void aceita(Visitor impressora) {
+		impressora.visitaSoma(this);
+	}
+	
+	
 }

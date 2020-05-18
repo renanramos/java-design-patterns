@@ -1,5 +1,8 @@
 package com.dev.renanrramos.designpattern.interpreter;
 
+import com.dev.renanrramos.designpattern.visitor.ImpressoraVisitor;
+import com.dev.renanrramos.designpattern.visitor.Visitor;
+
 public class Programa {
 
 	public static void main(String[] args) {		
@@ -10,6 +13,9 @@ public class Programa {
 		int resultado = soma.avalia();
 		
 		System.out.println(resultado);
+		
+		Visitor impressora = new ImpressoraVisitor();
+		soma.aceita(impressora);
 	}
 
 }

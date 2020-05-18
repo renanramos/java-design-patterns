@@ -1,5 +1,7 @@
 package com.dev.renanrramos.designpattern.interpreter;
 
+import com.dev.renanrramos.designpattern.visitor.Visitor;
+
 public class Numero implements Expressao{
 
 	private int numero;
@@ -12,4 +14,14 @@ public class Numero implements Expressao{
 	public int avalia() {
 		return numero;
 	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	@Override
+	public void aceita(Visitor impressora) {
+		impressora.visitaNumero(this);
+	}
+	
 }

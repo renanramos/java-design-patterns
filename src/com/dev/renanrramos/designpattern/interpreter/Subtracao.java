@@ -1,5 +1,7 @@
 package com.dev.renanrramos.designpattern.interpreter;
 
+import com.dev.renanrramos.designpattern.visitor.Visitor;
+
 public class Subtracao implements Expressao {
 
 	private Expressao direita;
@@ -16,4 +18,18 @@ public class Subtracao implements Expressao {
 		int valorDaDireita = direita.avalia();
 		return valorDaEsquerda - valorDaDireita;
 	}
+
+	public Expressao getDireita() {
+		return direita;
+	}
+
+	public Expressao getEsquerda() {
+		return esquerda;
+	}
+
+	@Override
+	public void aceita(Visitor impressora) {
+		impressora.visitaSubstracao(this);
+	}
+	
 }

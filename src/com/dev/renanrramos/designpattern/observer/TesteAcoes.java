@@ -15,7 +15,7 @@ public class TesteAcoes {
 		
 		NotaFiscal notaFiscal = builder.comCnpj("asdadad")
 				.comObservacao("asdasd")
-				.com(new ItemDaNota("item 01", 200.0))
+				.com(new ItemDaNota(3, "item 01", 200.0))
 				.dataAtual()
 				.comEmpresa("Empresa")
 				.constroi();
